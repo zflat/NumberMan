@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+if Tenant.count < 1
+  t = TenantFactory.new({name: 'Oranization'}).create
+end
+
+
+

@@ -15,3 +15,124 @@
 /log/*
 !/log/.keep
 /tmp
+
+
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+
+# See http://sujee.net/tech/articles/gitignore/
+.bundle
+*.sqlite3
+log/*
+*.log
+tmp/*
+*.sass-cache/*
+*.swp
+*~
+*.out
+*.project
+*.DS_Store
+*~
+.#*
+*#
+#*.lock
+config/database.yml
+config/application/secret_token.txt
+config/application/secret_base.txt
+config/application/mailer_config.rb
+public/photos/*
+spec/tmp
+spec/tmp/*
+public/assets/*
+public/.htaccess
+# Rails
+.bundle
+db/*.sqlite3
+db/*.sqlite3-journal
+*.log
+tmp
+tmp/**/*
+
+# Documentation
+doc/api
+doc/app
+.yardoc
+.yardopts
+coverage
+
+# Public Uploads
+public/system/*
+public/themes/*
+
+# Public Cache
+public/javascripts/cache
+public/stylesheets/cache
+public/refinery/*
+
+# Vendor Cache
+vendor/cache
+
+# Acts as Indexed
+index/**/*
+
+# Refinery Specific
+*.tmproj
+*.autobackupbyrefinery.*
+refinerycms-*.gem
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# NetBeans
+nbproject
+
+# Eclipse
+.project
+
+# Redcar
+.redcar
+
+# Rubinius
+*.rbc
+
+# Vim
+*.swp
+*.swo
+
+# RubyMine
+.idea
+
+# E-texteditor
+.eprj
+
+# Backup
+*~
+
+# Capybara Bug
+capybara-*html
+
+# sass
+.sass-cache
+.sass-cache/*
+
+#rvm
+.rvmrc
+.rvmrc.*
+
+# vendor/extensions dummy applications.
+vendor/extensions/**/spec/dummy
+
+# Allow each system have control of the ruby version used
+.ruby-version
