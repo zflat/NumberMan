@@ -8,7 +8,14 @@
 
 if Tenant.count < 1
   t = TenantFactory.new({name: 'Oranization'}).create
-end
 
+  if Sequence.count < 1
+    s = Sequence.create([
+                         {prefix: 'A', descriptor: 'Assembly', tenant: t},
+                         {prefix: 'B', descriptor: 'Part', tenant: t},
+                         {prefix: 'C', descriptor: 'Cable Assembly', tenant: t},
+                        ])
+  end
+end
 
 

@@ -4,6 +4,7 @@ class CreateNumbers < ActiveRecord::Migration
       t.string :value
       t.references :tenant, index: true, foreign_key: true
       t.references :prefix, index: true, foreign_key: true
+      t.string :descriptor
 
       t.timestamps null: false
     end

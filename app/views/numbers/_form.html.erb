@@ -1,0 +1,22 @@
+<%= form_for(@number, data: {abide: true}) do |f| %>
+  <% if @number.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@number.errors.count, "error") %> prohibited this number from being saved:</h2>
+      <ul>
+      <% @number.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :prefix do %>Prefix
+    <%= f.select :prefix, options_from_collection_for_select(@prefixes, "id", "value") %>
+  <% end %>
+  <%= f.label :descriptor do  %>Description
+    <%= f.text_field :descriptor, required: true %>
+  <% end %>
+
+  <%= f.submit  nil, {:class=>"button"} %>
+
+<% end %>

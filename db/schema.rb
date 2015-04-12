@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20150410021051) do
     t.string   "value"
     t.integer  "tenant_id"
     t.integer  "prefix_id"
+    t.string   "descriptor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -25,14 +26,17 @@ ActiveRecord::Schema.define(version: 20150410021051) do
   add_index "numbers", ["tenant_id"], name: "index_numbers_on_tenant_id"
   add_index "numbers", ["value"], name: "index_numbers_on_value"
 
-  create_table "prefixes", force: :cascade do |t|
-    t.string   "value"
+  create_table "sequences", force: :cascade do |t|
+    t.string   "prefix"
+    t.string   "descriptor"
+    t.integer  "width"
+    t.string   "alphabet"
     t.integer  "tenant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "prefixes", ["tenant_id"], name: "index_prefixes_on_tenant_id"
+  add_index "sequences", ["tenant_id"], name: "index_sequences_on_tenant_id"
 
   create_table "tenants", force: :cascade do |t|
     t.string   "access_key"

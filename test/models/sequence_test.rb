@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PrefixTest < ActiveSupport::TestCase
+class SequenceTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
