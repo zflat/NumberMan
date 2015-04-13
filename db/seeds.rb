@@ -11,9 +11,9 @@ if Tenant.count < 1
 
   if Sequence.count < 1
     s = Sequence.create([
-                         {prefix: 'A', descriptor: 'Assembly', tenant: t},
-                         {prefix: 'B', descriptor: 'Part', tenant: t},
-                         {prefix: 'C', descriptor: 'Cable Assembly', tenant: t},
+                         {prefix: 'A', descriptor: 'Assembly', tenant: t, width: 4},
+                         {prefix: 'B', descriptor: 'Part', tenant: t, width: 4},
+                         {prefix: 'C', descriptor: 'Cable Assembly', tenant: t, width: 4},
                         ])
   end
 end

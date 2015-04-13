@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  value: MyString
-  tenant_id: 
-  prefix: MyString
+number_one_w3:
+  value: 001
+  tenant: valid_tenant
+  sequence: valid_seq_ok
 
-two:
-  value: MyString
-  tenant_id: 
-  prefix: MyString
+number_two_w3:
+  value: 002
+  tenant: valid_tenant
+  sequence: valid_seq_ok

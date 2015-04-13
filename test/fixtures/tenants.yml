@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  access_key: MyString
-  name: MyString
+valid_tenant:
+  access_key: ok #<%= UUIDTools::UUID.random_create %>
+  name: ValidTenant
 
-two:
-  access_key: MyString
-  name: MyString
+valid_tennant2:
+  access_key:  okasd # <%= UUIDTools::UUID.random_create %>
+  name: ValidTenant2

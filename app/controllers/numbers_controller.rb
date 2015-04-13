@@ -6,7 +6,7 @@ class NumbersController < ApplicationController
   end
 
   def new
-    @prefixes  = Prefix.all
+    @sequence_options  = current_tenant.sequences
     @number ||= Number.new
   end
 

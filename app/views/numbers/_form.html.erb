@@ -10,8 +10,8 @@
     </div>
   <% end %>
 
-  <%= f.label :prefix do %>Prefix
-    <%= f.select :prefix, options_from_collection_for_select(@prefixes, "id", "value") %>
+  <%= f.label :sequence_id do %>Prefix
+    <%= f.select :sequence_id, options_for_select(@sequence_options.map{|s| ["#{s.prefix} (#{s.descriptor})", s.id] }, selected=@number.sequence_id) %>
   <% end %>
   <%= f.label :descriptor do  %>Description
     <%= f.text_field :descriptor, required: true %>

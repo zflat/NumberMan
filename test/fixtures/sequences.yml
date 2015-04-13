@@ -1,9 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  value: MyString
-  tenant_id: 
+valid_seq_ok:
+  prefix: ok
+  descriptor: Items that are OK
+  width: 3
+  tenant: valid_tenant 
 
-two:
-  value: MyString
-  tenant_id: 
+valid_seq_A:
+  prefix: A
+  descriptor: Items in group A
+  width: 5
+  tenant: valid_tenant
+
+max_used_seq:
+  prefix: Z
+  descriptor: Items in group Z
+  width: 5
+  tenant: valid_tenant

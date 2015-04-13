@@ -16,22 +16,22 @@ ActiveRecord::Schema.define(version: 20150410021051) do
   create_table "numbers", force: :cascade do |t|
     t.string   "value"
     t.integer  "tenant_id"
-    t.integer  "prefix_id"
+    t.integer  "sequence_id"
     t.string   "descriptor"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_index "numbers", ["prefix_id"], name: "index_numbers_on_prefix_id"
+  add_index "numbers", ["sequence_id"], name: "index_numbers_on_sequence_id"
   add_index "numbers", ["tenant_id"], name: "index_numbers_on_tenant_id"
   add_index "numbers", ["value"], name: "index_numbers_on_value"
 
   create_table "sequences", force: :cascade do |t|
     t.string   "prefix"
-    t.string   "descriptor"
-    t.integer  "width"
+    t.string   "descriptor", null: false
+    t.integer  "width",      null: false
     t.string   "alphabet"
-    t.integer  "tenant_id"
+    t.integer  "tenant_id",  null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+  # Prevent CSRF attacks for APIs using :null_session
+  protect_from_forgery with: :null_session
+
+
+  def current_tenant 
+    Tenant.first || Tenant.new
+  end
 end
