@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :numbers
+  devise_for :users, :skip => :registrations
 
   root 'numbers#index'
 

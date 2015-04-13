@@ -6,6 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+if User.count < 1
+  u = User.create([
+                   {email: 'user@org', password: 'password1'}
+                  ])
+end
+
 if Tenant.count < 1
   t = TenantFactory.new({name: 'Oranization'}).create
 
