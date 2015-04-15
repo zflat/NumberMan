@@ -11,9 +11,9 @@ class Sequence < ActiveRecord::Base
   end
 
   def next_available
-    max = numbers.maximum("decimal")
-    if max < to_decimal(max_allowable).to_i
-      to_base(max+1).rjust(width, to_base(0))
+    d = (numbers.maximum("decimal")||0)+1
+    if d <= to_decimal(max_allowable).to_i
+      [d, to_base(d).rjust(width, to_base(0))]
     else
       nil
     end

@@ -27,15 +27,24 @@ class SequenceTest < ActiveSupport::TestCase
     
     assert_equal s.to_base(10), "10"
   end
+
+  test "next available in sequence without numbers" do
+    s = sequences(:valid_seq_no_numbers)
+    assert s.numbers.empty?
+    d, n_str = s.next_available
+    assert_equal "00001", n_str
+  end
   
   test "next available default alphabet" do
     s = sequences(:valid_seq_ok)
-    assert_equal "004", s.next_available
+    d, n_str = s.next_available
+    assert_equal "004", n_str
   end
 
   test "next available custom alphabet" do
     s = sequences(:seq_with_alphabet)
-    assert_equal "aac", s.next_available
+    d, n_str = s.next_available
+    assert_equal "aac", n_str
   end
 
   test "maxed allowable with custom alphabet" do

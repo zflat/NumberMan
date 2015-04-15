@@ -6,7 +6,7 @@ valid_seq_ok:
   width: 3
   tenant: valid_tenant 
 
-valid_seq_A:
+valid_seq_no_numbers:
   prefix: A
   descriptor: Items in group A
   width: 5

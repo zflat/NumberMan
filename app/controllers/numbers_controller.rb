@@ -11,7 +11,7 @@ class NumbersController < ApplicationController
   end
 
   def create
-    @number = NumberFactory.new(recipe_params)
+    @number = NumberFactory.new(number_params)
 
     if @number.save
       redirect_to root, notice: 'Number was successfully created.'
@@ -24,18 +24,18 @@ class NumbersController < ApplicationController
   # DELETE 
   def destroy
     @number.destroy
-    redirect_to recipes_url, notice: 'Recipe was successfully destroyed.'
+    redirect_to numbers_url, notice: 'Number was successfully destroyed.'
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_number
-      @number = Number.includes(:prefix).find(params[:id])
+      @number = Number.includes(:sequence).find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def number_params
-      params.require(:number).permit(:name, :prefix_id)
+      params.require(:number).permit(:descriptor, :sequence_id)
     end
 
 end
