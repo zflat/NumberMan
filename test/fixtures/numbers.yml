@@ -2,10 +2,30 @@
 
 number_one_w3:
   value: 001
+  decimal: 1
   tenant: valid_tenant
   sequence: valid_seq_ok
 
 number_two_w3:
   value: 002
+  decimal: 2
   tenant: valid_tenant
   sequence: valid_seq_ok
+
+number_max_w3:
+  value: 003
+  decimal: 3
+  tenant: valid_tenant
+  sequence: valid_seq_ok
+
+number_with_alph_max: 
+  value: aab
+  decimal: 1
+  tenant: valid_tenant
+  sequence: seq_with_alphabet
+
+max_number_in_fullex_maxed_seq:
+  value: j
+  decimal: 9
+  tenant: valid_tenant
+  sequence: seq_fully_maxed_out

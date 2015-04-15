@@ -17,3 +17,23 @@ max_used_seq:
   descriptor: Items in group Z
   width: 5
   tenant: valid_tenant
+
+seq_with_alphabet:
+  prefix: Custom
+  descriptor: Items with alphabet numbers
+  width: 3
+  tenant: valid_tenant
+  alphabet: 'abcdefghij'
+
+seq_without_alphabet:
+  prefix: Custom
+  descriptor: Items without alphabet given
+  width: 3
+  tenant: valid_tenant
+
+seq_fully_maxed_out:
+  prefix: small
+  descriptor: Small set of items
+  width: 1
+  tenant: valid_tenant
+  alphabet: 'abcdefghij'

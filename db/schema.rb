@@ -14,9 +14,10 @@
 ActiveRecord::Schema.define(version: 20150413031055) do
 
   create_table "numbers", force: :cascade do |t|
-    t.string   "value"
-    t.integer  "tenant_id"
-    t.integer  "sequence_id"
+    t.string   "value",       null: false
+    t.integer  "decimal",     null: false
+    t.integer  "tenant_id",   null: false
+    t.integer  "sequence_id", null: false
     t.string   "descriptor"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
