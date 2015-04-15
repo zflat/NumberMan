@@ -1,28 +1,23 @@
-== README
+== NumberMan
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Number Management When you need to generate unique, incrementing numbers saved to a database back-end.
 
-Things you may want to cover:
+=== Features:
 
-* Ruby version
+* Numbers can be prefixed and are unique to that prefix only
+* Custom number format for each prefix
+  * Alphabet is by default [0-9] base 10, but can be any custom base & alphabet
+  * Width of the number is custom
 
-* System dependencies
+=== Application Info
 
-* Configuration
+* Ruby version 2.2.0
 
-* Database creation
+* Run the tests with
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+      <tt>bundle exec rake</tt>
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Generate docs by running 
+
+      <tt>rake doc:app</tt>.
