@@ -1,0 +1,44 @@
+<h1><%= @number.to_s %></h1>
+
+<%= form_for(@number, data: {abide: true}) do |f| %>
+  
+  <% if @number.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@number.errors.count, "error") %> prohibited this number from being saved:</h2>
+      <ul>
+      <% @number.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <table>
+    <tr>
+      <td>
+	<%= f.label :descriptor do  %>Description: 
+	<% end %>
+      </td>
+      <td>
+	<%= f.text_field :descriptor, required: true %>
+      </td>
+    </tr>
+    <tr>
+      <td>Sequence:</td>
+      <td><%= link_to @number.sequence.descriptor, sequence_numbers_path(@number.sequence) %></td>
+    </tr>
+    <tr>
+      <td>Created: </td>
+      <td><%= @number.created_at %></td>
+    </tr>
+    <tr>
+      <td>Last Updated: </td>
+      <td><%= @number.updated_at %></td>
+    </tr>
+  </table>
+
+  <br />
+  <%= f.submit  nil, {:class=>"button"} %>
+  <%= button_tag 'Reset', :type => 'reset' %>
+
+<% end %>

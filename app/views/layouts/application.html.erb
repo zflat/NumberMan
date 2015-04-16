@@ -12,7 +12,7 @@
 
   <% if user_signed_in? %>
     <p><%= current_tenant.name %> | <%= current_user.email %> | <%= link_to 'Sign out', destroy_user_session_path, method: :delete %> </p>
-    <ul>
+    <ul id="navlist">
       <li><%= link_to 'New number', new_number_path %></li>
       <li><%= link_to 'Browse numbers', numbers_path %></li>
     </ul>
@@ -24,5 +24,7 @@
 
 <%= yield %>
 
+<hr />
+<p><a href="#">Top</a> | <a href="#navlist">Navigation</a></p>
 </body>
 </html>

@@ -30,9 +30,10 @@
   <% else %>
     <h2>All Numbers</h2>
   <% end %>
-  <ol>
+  <%= paginate @numbers %>
+  <ul>
     <% @numbers.each do |n|  %>
       <li><%= link_to n.to_s, number_path(n) %> <%= n.descriptor %> (<%= n.updated_at.strftime('%m/%d/%Y') %>)</li>
     <% end  %>
-  </ol>
+  </ul>
 <% end  %>

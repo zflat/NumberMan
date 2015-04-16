@@ -4,11 +4,15 @@ class NumbersController < ApplicationController
   def index
     if seq_id = params[:sequence_id]
       @sequence = Sequence.where(id: seq_id).first
-      @numbers = @sequence.numbers
+      @numbers = @sequence.numbers.page(params[:page]).order('decimal')
     else
       @sequence_options  = current_tenant.sequences
-      @numbers = Number.all
+      @numbers = Number.all.includes(:sequence).page(params[:page]).order('sequences.prefix', 'decimal')
     end
+  end
+
+  def show
+    @number = Number.where(id: params[:id]).first
   end
 
   def new
@@ -16,11 +20,20 @@ class NumbersController < ApplicationController
     @number ||= Number.new
   end
 
+  # PATCH/PUT /recipes/1
+  def update
+    if @number.update(number_params)
+      redirect_to @number, notice: "#{@number.to_s} was successfully updated."
+    else
+      render :show
+    end
+  end
+
   def create
     @number = NumberFactory.new(number_params).create
 
     if @number.valid?
-      redirect_to root_path, notice: "Number #{@number.to_s} was successfully created."
+      redirect_to number_path(@number), notice: "#{@number.sequence.descriptor} #{@number.to_s} created."
     else
       render :new
     end
