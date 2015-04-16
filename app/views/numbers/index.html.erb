@@ -1,8 +1,8 @@
 <% if @sequence_options %>
   <table>
     <thead>
-    <th>Sequence</th>
     <th>Prefix</th>
+    <th>Sequence</th>
     <th>Numbers</th>
     </thead>
     <tbody>
@@ -26,7 +26,7 @@
 <% else %>
   <ul>
     <% @numbers.each do |n|  %>
-      <li><%= n.to_s %> <%= n.descriptor %> </li>
+      <li><%= n.to_s %> <%= n.descriptor %> created on <%= n.created_at.strftime('%m/%d/%Y') %></li>
     <% end  %>
   </ul>
 <% end  %>
