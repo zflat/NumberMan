@@ -3,8 +3,8 @@ class CreateNumbers < ActiveRecord::Migration
     create_table :numbers do |t|
       t.string :value, null: false
       t.integer :decimal, null: false
-      t.references :tenant, index: true, foreign_key: true, null: false
-      t.references :sequence, index: true, foreign_key: true, null: false
+      t.references :tenant, index: true, null: false #, foreign_key: true
+      t.references :sequence, index: true, null: false #, foreign_key: true
       t.string :descriptor
 
       t.timestamps null: false

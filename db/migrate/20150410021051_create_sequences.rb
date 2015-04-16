@@ -6,7 +6,7 @@ class CreateSequences < ActiveRecord::Migration
       t.string :descriptor, null: false
       t.integer :width, null: false
       t.string  :alphabet
-      t.references :tenant, index: true, foreign_key: true, null: false
+      t.references :tenant, index: true, null: false #, foreign_key: true
 
       t.timestamps null: false
     end
