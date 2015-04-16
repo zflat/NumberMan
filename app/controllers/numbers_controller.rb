@@ -1,5 +1,5 @@
 class NumbersController < ApplicationController
-  before_action :set_number, only: [:edit, :update, :destroy]
+  before_action :set_number, only: [:show, :update, :destroy]
 
   def index
     if seq_id = params[:sequence_id]
@@ -12,7 +12,6 @@ class NumbersController < ApplicationController
   end
 
   def show
-    @number = Number.where(id: params[:id]).first
   end
 
   def new
@@ -39,11 +38,10 @@ class NumbersController < ApplicationController
     end
   end
 
-
   # DELETE 
   def destroy
     @number.destroy
-    redirect_to numbers_url, notice: 'Number was successfully destroyed.'
+    redirect_to numbers_url, notice: "#{@number.to_s} was successfully destroyed."
   end
 
   private

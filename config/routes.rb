@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :sequences do 
+  resources :sequences, only: [] do 
     resources :numbers, only: [:index, :new, :create]
   end
-  resources :numbers, only: [:index, :new, :show, :edit, :update, :destroy, :create]
-
+  resources :numbers, only: [:index, :new, :show, :update, :destroy, :create]
 
   devise_for :users, :skip => :registrations
 

@@ -31,7 +31,7 @@ namespace :db do
     require 'faker'
     Sequence.all.each do |s|
       (100+rand(80)).times do |i|
-        desc = "#{Faker::Name.material} #{%w(OD L W H Size val n s m M #).sample}#{rand(99)} #{Faker::Name.mechanical}"
+        desc = "#{Faker::Name.material} #{%w(OD L W H Size val n s m M #).sample}#{rand(99)} #{Faker::Name.mechanical} #{Faker::Name.mechanical}"
         NumberFactory.new(sequence_id: s.id, descriptor: desc).create
       end
     end
