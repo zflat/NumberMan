@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+  faker:
+    name:
+      material: [Metal, Plastic, Stainless, 6061, Brass, GP03, Poly, FR4]
+      mechanical: [Bracket, Component, Bushing, Spacer, Outer, Inner, Pin, Line, Shell, Plate, Socket, Stub, Mount Board, Mount Plate, Mount Bracket, Relief Clip, Housing Clip, Housing Bracket, Outer to Inner, Component to Assembly]
+

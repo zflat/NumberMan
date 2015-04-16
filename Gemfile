@@ -43,6 +43,10 @@ group :production do
   gem 'rails_12factor'
 end
 
+group :development do
+  gem 'faker', require: false
+end
+
 group :development, :test do
   gem 'sqlite3'
 

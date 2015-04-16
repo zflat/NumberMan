@@ -7,13 +7,15 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 if Tenant.count < 1
+  
   t = TenantFactory.new({name: 'Oranization'}).create
 
   if Sequence.count < 1
+    a = '0123456789ABCDEFGHJKLMNPQRSTUVWXYZ'
     s = Sequence.create([
-                         {prefix: 'A', descriptor: 'Assembly', tenant: t, width: 4, delimiter: '-'},
-                         {prefix: 'B', descriptor: 'Part', tenant: t, width: 4, delimiter: '-'},
-                         {prefix: 'C', descriptor: 'Cable Assembly', tenant: t, width: 4, delimiter: '-'},
+                         {prefix: 'A', descriptor: 'Assembly', tenant: t, width: 3, delimiter: '-', alphabet: a},
+                         {prefix: 'B', descriptor: 'Part', tenant: t, width: 3, delimiter: '-', alphabet: a},
+                         {prefix: 'C', descriptor: 'Cable Assembly', tenant: t, width: 3, delimiter: '-', alphabet: a},
                         ])
   end
 end

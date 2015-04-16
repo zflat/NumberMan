@@ -1,9 +1,10 @@
 <% if @sequence_options %>
+  <h2>Summary Table</h2>
   <table>
     <thead>
     <th>Prefix</th>
-    <th>Sequence</th>
-    <th>Numbers</th>
+    <th>Sequence Desc.</th>
+    <th>Numbers Assigned</th>
     </thead>
     <tbody>
       <% @sequence_options.each do |seq| %>
@@ -24,9 +25,14 @@
 <% if @numbers.empty?  %>
   <p>No numbers created yet.</p>
 <% else %>
-  <ul>
+  <% if @sequence %>
+    <h2><%= @sequence.descriptor%> Numbers</h2>
+  <% else %>
+    <h2>All Numbers</h2>
+  <% end %>
+  <ol>
     <% @numbers.each do |n|  %>
-      <li><%= n.to_s %> <%= n.descriptor %> created on <%= n.created_at.strftime('%m/%d/%Y') %></li>
+      <li><%= link_to n.to_s, number_path(n) %> <%= n.descriptor %> (<%= n.updated_at.strftime('%m/%d/%Y') %>)</li>
     <% end  %>
-  </ul>
+  </ol>
 <% end  %>

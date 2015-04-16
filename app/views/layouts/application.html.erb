@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>NumberMan</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <title>Number Management</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <% if user_signed_in? %>
-    <p><%= current_user.email %> [<%= current_tenant.name %>] | <%= link_to 'Sign out', destroy_user_session_path, method: :delete %> </p>
+  <h1>Number Manager</h1>
 
+  <% if user_signed_in? %>
+    <p><%= current_tenant.name %> | <%= current_user.email %> | <%= link_to 'Sign out', destroy_user_session_path, method: :delete %> </p>
     <ul>
       <li><%= link_to 'New number', new_number_path %></li>
       <li><%= link_to 'Browse numbers', numbers_path %></li>
     </ul>
+    <hr />
   <% end %>
 
 <p class="notice"><%= notice %></p>
