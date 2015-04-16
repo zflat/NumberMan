@@ -1,3 +1,32 @@
-<% @numbers.each do   %>
+<% if @sequence_options %>
+  <table>
+    <thead>
+    <th>Sequence</th>
+    <th>Prefix</th>
+    <th>Numbers</th>
+    </thead>
+    <tbody>
+      <% @sequence_options.each do |seq| %>
+	<tr> 
+	  <td><%= seq.prefix %></td>
+	  <td><%= seq.descriptor %></td>
+	  <td><%= link_to seq.numbers.count, sequence_numbers_path(seq) %></td>
+	</tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
 
+<% if @sequence %>
+  <%= link_to "All numbers", numbers_path%> &#187; <%= @sequence.prefix %>
+<% end %>
+
+<% if @numbers.empty?  %>
+  <p>No numbers created yet.</p>
+<% else %>
+  <ul>
+    <% @numbers.each do |n|  %>
+      <li><%= n.to_s %> <%= n.descriptor %> </li>
+    <% end  %>
+  </ul>
 <% end  %>

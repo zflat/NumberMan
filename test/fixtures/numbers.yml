@@ -1,19 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 number_one_w3:
-  value: 001
+  value: '001'
   decimal: 1
   tenant: valid_tenant
   sequence: valid_seq_ok
 
 number_two_w3:
-  value: 002
+  value: '002'
   decimal: 2
   tenant: valid_tenant
   sequence: valid_seq_ok
 
 number_max_w3:
-  value: 003
+  value: '003'
   decimal: 3
   tenant: valid_tenant
   sequence: valid_seq_ok
@@ -29,3 +29,15 @@ max_number_in_fullex_maxed_seq:
   decimal: 9
   tenant: valid_tenant
   sequence: seq_fully_maxed_out
+
+number_without_prefix:
+  value: 1
+  decimal: 1
+  tenant: valid_tenant
+  sequence: valid_seq_no_prefix
+
+number_without_delimiter:
+  value: 1
+  decimal: 1
+  tenant: valid_tenant
+  sequence: valid_seq_no_delimiter

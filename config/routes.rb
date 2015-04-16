@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :numbers
+
+  resources :sequences do 
+    resources :numbers, only: [:index, :new, :create]
+  end
+  resources :numbers, only: [:index, :new, :show, :edit, :update, :destroy, :create]
+
+
   devise_for :users, :skip => :registrations
 
   root 'numbers#index'

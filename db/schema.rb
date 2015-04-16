@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20150413031055) do
 
   create_table "sequences", force: :cascade do |t|
     t.string   "prefix"
+    t.string   "delimiter"
     t.string   "descriptor", null: false
     t.integer  "width",      null: false
     t.string   "alphabet"

@@ -11,7 +11,7 @@
   <% end %>
 
   <%= f.label :sequence_id do %>Prefix
-    <%= f.select :sequence_id, options_for_select(@sequence_options.map{|s| ["#{s.prefix} (#{s.descriptor})", s.id] }, selected=@number.sequence_id) %>
+    <%= f.select :sequence_id, options_for_select(@sequence_options.map{|s| ["#{s.prefix} (#{s.descriptor})", s.id] }, selected=@number.sequence_id), required: true %>
   <% end %>
   <%= f.label :descriptor do  %>Description
     <%= f.text_field :descriptor, required: true %>

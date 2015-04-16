@@ -2,24 +2,41 @@
 
 valid_seq_ok:
   prefix: ok
+  delimiter: '-'
   descriptor: Items that are OK
   width: 3
   tenant: valid_tenant 
 
 valid_seq_no_numbers:
   prefix: A
+  delimiter: '-'
   descriptor: Items in group A
   width: 5
   tenant: valid_tenant
 
+valid_seq_no_prefix:
+  delimiter: '-'
+  delimiter: '#'
+  descriptor: starting with the delimiter is like a prefix
+  width: 1
+  tenant: valid_tenant
+
+valid_seq_no_delimiter:
+  prefix: smush
+  descriptor: prefix smushed with value
+  width: 1
+  tenant: valid_tenant
+
 max_used_seq:
   prefix: Z
+  delimiter: '-'
   descriptor: Items in group Z
   width: 5
   tenant: valid_tenant
 
 seq_with_alphabet:
   prefix: Custom
+  delimiter: '-'
   descriptor: Items with alphabet numbers
   width: 3
   tenant: valid_tenant
@@ -27,12 +44,14 @@ seq_with_alphabet:
 
 seq_without_alphabet:
   prefix: Custom
+  delimiter: '-'
   descriptor: Items without alphabet given
   width: 3
   tenant: valid_tenant
 
 seq_fully_maxed_out:
   prefix: small
+  delimiter: '-'
   descriptor: Small set of items
   width: 1
   tenant: valid_tenant

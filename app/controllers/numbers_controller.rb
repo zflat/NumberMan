@@ -2,7 +2,13 @@ class NumbersController < ApplicationController
   before_action :set_number, only: [:edit, :update, :destroy]
 
   def index
-    @numbers = Number.all
+    if seq_id = params[:sequence_id]
+      @sequence = Sequence.where(id: seq_id).first
+      @numbers = @sequence.numbers
+    else
+      @sequence_options  = current_tenant.sequences
+      @numbers = Number.all
+    end
   end
 
   def new
@@ -11,10 +17,10 @@ class NumbersController < ApplicationController
   end
 
   def create
-    @number = NumberFactory.new(number_params)
+    @number = NumberFactory.new(number_params).create
 
-    if @number.save
-      redirect_to root, notice: 'Number was successfully created.'
+    if @number.valid?
+      redirect_to root_path, notice: "Number #{@number.to_s} was successfully created."
     else
       render :new
     end
