@@ -17,15 +17,15 @@ class SequenceTest < ActiveSupport::TestCase
     s = sequences(:seq_with_alphabet)
     refute_nil s.base_system
     
-    assert_equal s.to_base(10), "10".b(10).to_a(base_characters).join
-    assert_equal 'ba', s.to_base('10')
+    assert_equal s.decimal_to_base(10), "10".b(10).to_a(base_characters).join
+    assert_equal 'ba', s.decimal_to_base('10')
   end
 
   test "convert to default base" do
     s = sequences(:seq_without_alphabet)
     refute_nil s.base_system
     
-    assert_equal s.to_base(10), "10"
+    assert_equal s.decimal_to_base(10), "10"
   end
 
   test "next available in sequence without numbers" do
