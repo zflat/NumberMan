@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 20150413031055) do
   create_table "numbers", force: :cascade do |t|
     t.string   "value",       null: false
     t.integer  "decimal",     null: false
-    t.integer  "tenant_id",   null: false
     t.integer  "sequence_id", null: false
     t.string   "descriptor"
     t.datetime "created_at",  null: false
@@ -24,7 +23,6 @@ ActiveRecord::Schema.define(version: 20150413031055) do
   end
 
   add_index "numbers", ["sequence_id"], name: "index_numbers_on_sequence_id"
-  add_index "numbers", ["tenant_id"], name: "index_numbers_on_tenant_id"
   add_index "numbers", ["value"], name: "index_numbers_on_value"
 
   create_table "sequences", force: :cascade do |t|
