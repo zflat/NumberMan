@@ -4,10 +4,10 @@ class NumbersController < ApplicationController
   def index
     if seq_id = params[:sequence_id]
       @sequence = Sequence.where(id: seq_id).first
-      @numbers = @sequence.numbers.page(params[:page]).order('decimal')
+      @numbers = @sequence.numbers.page(params[:page]).order('decimal').reverse_order
     else
       @sequence_options  = current_tenant.sequences
-      @numbers = Number.all.includes(:sequence).page(params[:page]).order('sequences.prefix', 'decimal')
+      @numbers = Number.all.includes(:sequence).page(params[:page]).order('updated_at').reverse_order
     end
   end
 
