@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 
+gem 'foundation-rails', '~>6.1.1.3'
+gem 'select2-rails', '~>4.0.1'
+
 gem 'devise', '~> 3.4.1'
 gem 'uuidtools', '~> 2.1.5'
 gem 'radix', '~> 2.2.1'

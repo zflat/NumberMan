@@ -1,30 +1,51 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Number Management</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= content_for?(:title) ? yield(:title) : "Number Management" %></title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <br /><br />
+    <script type="text/javascript">
+     $(document).ready(function() {
+         $(".js-example-basic-single").select2({
+             placeholder: "Select a state",
+             allowClear: true,
+             theme: "classic"
+         });
 
-  <h1>Number Manager</h1>
+         $(".js-example-basic-single-foundation").select2({
+             placeholder: "Select a state",
+             allowClear: true,
+             theme: "foundation"
+         });
+     });
+    </script>
 
-  <% if user_signed_in? %>
-    <p><%= current_tenant.name %> | <%= current_user.email %> | <%= link_to 'Sign out', destroy_user_session_path, method: :delete %> </p>
-    <ul id="navlist">
-      <li><%= link_to 'New number', new_number_path %></li>
-      <li><%= link_to 'Browse numbers', numbers_path %></li>
-    </ul>
-    <hr />
-  <% end %>
+    <div class="row column">
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+      <h1>Number Manager</h1>
 
-<%= yield %>
+      <% if user_signed_in? %>
+        <p><%= current_tenant.name %> | <%= current_user.email %> | <%= link_to 'Sign out', destroy_user_session_path, method: :delete %> </p>
+        <ul id="navlist">
+          <li><%= link_to 'New number', new_number_path %></li>
+          <li><%= link_to 'Browse numbers', numbers_path %></li>
+        </ul>
+        <hr />
+      <% end %>
 
-<hr />
-<p><a href="#">Top</a> | <a href="#navlist">Navigation</a></p>
-</body>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+      <%= yield %>
+
+      <hr />
+      <p><a href="#">Top</a> | <a href="#navlist">Navigation</a></p>
+    </div>
+  </body>
 </html>
